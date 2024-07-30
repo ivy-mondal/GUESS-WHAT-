@@ -9,7 +9,9 @@ if __name__ == "__main__":
     print("So yo playing a  game eh! Aight gimme yo topic ^_^")
     yo_topic = input()
     yo_lines = get_lines(yo_topic)
-    print(yo_lines)
+
+    for line in yo_lines:
+        print(f"\t {line}")
 
     choice = "nay"
     while choice != "yay":
