@@ -9,8 +9,9 @@ if __name__ == "__main__":
     print("So yo playing a  game eh! Aight gimme yo topic ^_^")
     yo_topic = input()
     yo_lines = get_lines(yo_topic)
+    filtered_lines = [string for string in yo_lines if string]
 
-    for line in yo_lines:
+    for line in filtered_lines:
         print(f"\t {line}")
 
     choice = "nay"
@@ -24,11 +25,10 @@ if __name__ == "__main__":
 
     print("Okie, we go with " + da_line)
 
-    print("Between ivy and mr fluffy: " + "\n" + "who do you think gonna win this one?")
-    guess = input()
+
 
     all_languages = [
-        "Arabic", "Armenian", "Azerbaijani",
+        "Afrikaans", "Arabic", "Armenian", "Azerbaijani",
         "Belarusian", "Bengali", "Bosnian", "Bulgarian",
         "Chinese", "Croatian", "Czech", "Danish",
         "Dutch", "English", "Esperanto", "Estonian", "Filipino", "Finnish", "French",
@@ -52,11 +52,30 @@ if __name__ == "__main__":
         sentence = translate(sentence, from_lang, to_lang)
         from_lang = to_lang
 
-    lang_list = ["Spanish", "German", "French", "Hindi", "Marathi", "Gujarati", "Chinese", "Japanese", "Persian", "Greek"]
-    last_one = random.choice(lang_list)
+    lang_list_01 = [
+        "Hindi", "Marathi", "Gujarati", "Tamil", "Telugu", "Kannada", "Malayalam", "Punjabi", "Bengali", "Odia", "kannada", "Assamese",
+        "Armenian", "Chinese", "Filipino", "Greek", "Hebrew", "Indonesian", "Japanese", "Korean", "Persian",
+        "Thai", "Urdu", "Vietnamese"]  # to screw mr fluffy
+    lang_list_02 = [
+        "Russian", "Belarusian", "Ukrainian", "Polish", "Czech", "Slovak", "Bulgarian", "Macedonian", "Croatian", "Slovene",
+        "Arabic", "Afrikaans", "Czech", "Danish", "Dutch", "Finnish", "French",
+         "Icelandic", "Irish",  "Latin", "Norwegian", "Polish",  "Swedish"
+    ]
+    print("which list do you want to proceed with, 1 or 2? (1 to screw mr meow)")
+    choice = input()
+
+    if choice == "1":
+        last_list = lang_list_01
+    if choice == "2":
+        last_list = lang_list_02
+    last_one = random.choice(last_list)
     final_line = translate(sentence, to_lang, last_one)
 
-    not_latin = ["Hindi", "Marathi", "Gujarati", "Chinese", "Japanese", "Persian", "Greek"]
+    not_latin = ["Hindi", "Marathi", "Gujarati","Tamil", "Telugu", "Kannada", "Malayalam", "Punjabi", "Bengali", "Odia", "kannada", "Assamese",
+        "Armenian", "Chinese", "Filipino", "Greek", "Hebrew", "Indonesian", "Japanese", "Korean", "Persian",
+        "Thai", "Urdu", "Vietnamese","Russian", "Belarusian", "Ukrainian", "Polish", "Czech", "Slovak", "Bulgarian", "Macedonian", "Croatian",
+         "Slovene","Arabic", "Afrikaans", "Czech", "Danish", "Dutch", "Finnish", "French",
+         "Icelandic", "Irish",  "Latin", "Norwegian", "Polish",  "Swedish" ]
 
     if last_one not in not_latin:
         print("Here it comes @_@:  " + "\n" + final_line)
@@ -64,9 +83,4 @@ if __name__ == "__main__":
         spain_without_s = transliterate(final_line, last_one)
         print("Here it comes @_@:  " + "\n" + spain_without_s)
 
-    print("Soooo, was your prediction accurate? " + "\n" + "(as a smol program me take only yes or no here :)")
-    answer = input()
-    if answer != "no":
-        print("zamn yo be predicting future now 0w0")
-    else:
-        print("whoops, it's okie, yo gonna predict correctly next time *pat pat*")
+
