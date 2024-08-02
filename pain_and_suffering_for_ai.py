@@ -71,11 +71,13 @@ if __name__ == "__main__":
     last_one = random.choice(last_list)
     final_line = translate(sentence, to_lang, last_one)
 
-    not_latin = ["Hindi", "Marathi", "Gujarati","Tamil", "Telugu", "Kannada", "Malayalam", "Punjabi", "Bengali", "Odia", "kannada", "Assamese",
-        "Armenian", "Chinese", "Filipino", "Greek", "Hebrew", "Indonesian", "Japanese", "Korean", "Persian",
-        "Thai", "Urdu", "Vietnamese","Russian", "Belarusian", "Ukrainian", "Polish", "Czech", "Slovak", "Bulgarian", "Macedonian", "Croatian",
-         "Slovene","Arabic", "Afrikaans", "Czech", "Danish", "Dutch", "Finnish", "French",
-         "Icelandic", "Irish",  "Latin", "Norwegian", "Polish",  "Swedish" ]
+    not_latin = [
+        "Hindi", "Marathi", "Gujarati", "Tamil", "Telugu", "Kannada", "Malayalam",
+        "Punjabi", "Bengali", "Odia", "Assamese", "Armenian", "Chinese", "Filipino",
+        "Greek", "Hebrew", "Indonesian", "Japanese", "Korean", "Persian", "Thai",
+        "Urdu", "Vietnamese", "Russian", "Belarusian", "Ukrainian", "Bulgarian",
+        "Macedonian", "Arabic"
+    ]
 
     if last_one not in not_latin:
         print("Here it comes @_@:  " + "\n" + final_line)
