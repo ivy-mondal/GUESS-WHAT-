@@ -12,7 +12,10 @@ def get_lines(yo_topic: str, word_count: int = 10):
         ]
     )
     result = completion.choices[0].message.content
-    return result.split("\n")
+    lines = result.split("\n")
+    filtered_lines = [string for string in lines if string]
+
+    return filtered_lines
 
 
 if __name__ == "__main__":

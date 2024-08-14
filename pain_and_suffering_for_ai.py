@@ -9,9 +9,7 @@ if __name__ == "__main__":
     print("So yo playing a  game eh! Aight gimme yo topic ^_^")
     yo_topic = input()
     yo_lines = get_lines(yo_topic)
-    filtered_lines = [string for string in yo_lines if string]
-
-    for line in filtered_lines:
+    for line in yo_lines:
         print(f"\t {line}")
 
     choice = "nay"
@@ -24,8 +22,6 @@ if __name__ == "__main__":
         choice = input()
 
     print("Okie, we go with " + da_line)
-
-
 
     all_languages = [
         "Afrikaans", "Arabic", "Armenian", "Azerbaijani",
@@ -59,7 +55,7 @@ if __name__ == "__main__":
     lang_list_02 = [
         "Russian", "Belarusian", "Ukrainian", "Polish", "Czech", "Slovak", "Bulgarian", "Macedonian", "Croatian", "Slovene",
         "Arabic", "Afrikaans", "Czech", "Danish", "Dutch", "Finnish", "French",
-         "Icelandic", "Irish",  "Latin", "Norwegian", "Polish",  "Swedish"
+        "Icelandic", "Irish", "Latin", "Norwegian", "Polish", "Swedish"
     ]
     print("which list do you want to proceed with, 1 or 2? (1 to screw mr meow)")
     choice = input()
@@ -84,5 +80,3 @@ if __name__ == "__main__":
     else:
         spain_without_s = transliterate(final_line, last_one)
         print("Here it comes @_@:  " + "\n" + spain_without_s)
-
-
